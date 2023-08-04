@@ -1,6 +1,6 @@
 # IETF Insights
 
-This is a thin python client to an IETF insights service.
+This is a thin python client to an IETF service that provides into IETF participation.
 
 ```
 ❯ python3 ietf-insights.py -H
@@ -35,70 +35,9 @@ Attendance per meeting (in tabular format):
 | ietf117   |         1535 |
 +-----------+--------------+
 ```
-## Arguments
-
-- `-m` or `--meeting`: Specifies the meeting to process. This argument is required when using `-s/--stats`, `-n/--name`, `-c/--company`, or `-g/--group`. 
-
-  Example: `python3 counter.py -m "ietf117"`
-
-- `-n` or `--name`: Filters the data based on a specific name. This argument requires `-m/--meeting`.
-
-  Example: `python3 counter.py -n "John Doe" -m "ietf117"`
-
-- `-c` or `--company`: Filters the data based on a specific company. This argument requires `-m/--meeting`.
-
-  Example: `python3 counter.py -c "ericsson" -m "ietf117"`
-
-- `-g` or `--group`: Filters the data based on a specific group. This argument requires `-m/--meeting`.
-
-  Example: `python3 counter.py -g "core" -m "ietf117"`
-
-- `-s` or `--stats`: Displays statistics. This argument requires `-m/--meeting`.
-
-  Example: `python3 counter.py -s -m "ietf117"`
-
-- `-H` or `--historical-stats`: Displays historical statistics. Can be used alone or with `-n/--name` or `-g/--group`.
-
-  Example: `python3 counter.py -H`
-
-- `--country`: Filters the data based on a specific country. This argument requires `-m/--meeting`.
-
-  Example: `python3 counter.py --country "ES" -m "ietf117"`
-
-- `--not-attending`: Finds non-attending groups for a specific company. This argument requires `-m/--meeting`.
-
-  Example: `python3 counter.py --not-attending "ACME INC" -m "ietf117"`
-
-Please note that the script will raise an error if required arguments are missing or if invalid commands are provided. 
-
-Refer to the command line help documentation for more details (`-h`).
-
-
 ## Sample Queries
 
-- `python3 ietf-insights.py -c "google" -g "dult" -m "ietf117"`
-This command fetches participants from "google" in the "dult" group at the "ietf117" meeting.
-
-
-```
-+--------------------+-----------+------------+---------------+
-| Participant        | Country   | Reg Type   | Affiliation   |
-|--------------------+-----------+------------+---------------|
-| Bradford Lassey    | US        | Onsite     | Google        |
-| Chris Morrow       |           |            | Google        |
-| David Morley       | US        | Onsite     | Google        |
-| David Schinazi     | US        | Onsite     | Google        |
-| Devon O&#X27;Brien | US        | Onsite     | Google        |
-| Eric Orth          | US        | Remote     | Google        |
-| Siddika Polatkan   | US        | Remote     | Google        |
-| Tajinder Gadh      | US        | Remote     | Google        |
-| Vanessa Reimer     | US        | Onsite     | Google        |
-| Warren Kumari      | US        | Onsite     | Google        |
-+--------------------+-----------+------------+---------------+
-```
-
-- `python3 ietf-insights.py -s -m "ietf117"`
-This command lists some statistics for a specific IETF meeting.
+- This command lists some statistics for a specific IETF meeting: `python3 ietf-insights.py -s -m "ietf117"`
 
 ```
 Total number of unique participants: 1535
@@ -172,6 +111,90 @@ Most active participants (total WG session attendance):
 | David Schinazi     | Google                                 |      22 |
 | James Welch        |                                        |      22 |
 +--------------------+----------------------------------------+---------+
+```
+
+- Fetch participants from a specific company or working group at a specific meeting: `python3 ietf-insights.py -c "google" -g "dult" -m "ietf117"`
+
+```
++--------------------+-----------+------------+---------------+
+| Participant        | Country   | Reg Type   | Affiliation   |
+|--------------------+-----------+------------+---------------|
+| Bradford Lassey    | US        | Onsite     | Google        |
+| Chris Morrow       |           |            | Google        |
+| David Morley       | US        | Onsite     | Google        |
+| David Schinazi     | US        | Onsite     | Google        |
+| Devon O&#X27;Brien | US        | Onsite     | Google        |
+| Eric Orth          | US        | Remote     | Google        |
+| Siddika Polatkan   | US        | Remote     | Google        |
+| Tajinder Gadh      | US        | Remote     | Google        |
+| Vanessa Reimer     | US        | Onsite     | Google        |
+| Warren Kumari      | US        | Onsite     | Google        |
++--------------------+-----------+------------+---------------+
+```
+
+- Get insights about a participant: `python3 ietf-insights.py -n "Jaime Jimenez" -m "ietf117"`
 
 
 ```
++---------------+----------+-------------+-----------+---------------+------------+
+| Participant   | Group    | NumGroups   | Country   | Affiliation   | Reg Type   |
+|---------------+----------+-------------+-----------+---------------+------------|
+| Jaime Jimenez | dtn      | 14          | FI        | Ericsson      | Remote     |
+|               | anrw     |             |           |               |            |
+|               | rats     |             |           |               |            |
+|               | scitt    |             |           |               |            |
+|               | dnsop    |             |           |               |            |
+|               | dispatch |             |           |               |            |
+|               | lake     |             |           |               |            |
+|               | core     |             |           |               |            |
+|               | irtfopen |             |           |               |            |
+|               | ietf     |             |           |               |            |
+|               | 6man     |             |           |               |            |
+|               | eodir    |             |           |               |            |
+|               | httpapi  |             |           |               |            |
+|               | rswg     |             |           |               |            |
++---------------+----------+-------------+-----------+---------------+------------+
+
+```
+
+
+
+## Arguments
+
+- `-m` or `--meeting`: Specifies the meeting to process. This argument is required when using `-s/--stats`, `-n/--name`, `-c/--company`, or `-g/--group`. 
+
+  Example: `python3 counter.py -m "ietf117"`
+
+- `-n` or `--name`: Filters the data based on a specific name. This argument requires `-m/--meeting`.
+
+  Example: `python3 counter.py -n "John Doe" -m "ietf117"`
+
+- `-c` or `--company`: Filters the data based on a specific company. This argument requires `-m/--meeting`.
+
+  Example: `python3 counter.py -c "ericsson" -m "ietf117"`
+
+- `-g` or `--group`: Filters the data based on a specific group. This argument requires `-m/--meeting`.
+
+  Example: `python3 counter.py -g "core" -m "ietf117"`
+
+- `-s` or `--stats`: Displays statistics. This argument requires `-m/--meeting`.
+
+  Example: `python3 counter.py -s -m "ietf117"`
+
+- `-H` or `--historical-stats`: Displays historical statistics. Can be used alone or with `-n/--name` or `-g/--group`.
+
+  Example: `python3 counter.py -H`
+
+- `--country`: Filters the data based on a specific country. This argument requires `-m/--meeting`.
+
+  Example: `python3 counter.py --country "ES" -m "ietf117"`
+
+- `--not-attending`: Finds non-attending groups for a specific company. This argument requires `-m/--meeting`.
+
+  Example: `python3 counter.py --not-attending "ACME INC" -m "ietf117"`
+
+Please note that the script will raise an error if required arguments are missing or if invalid commands are provided.
+
+Refer to the command line help documentation for more details (`-h`).
+
+**NOTE: This is work in progress and things may break**
