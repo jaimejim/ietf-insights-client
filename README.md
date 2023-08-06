@@ -1,6 +1,6 @@
 # IETF Insights
 
-This is a thin python client to an IETF service that provides into IETF participation.
+This is a thin python client to an IETF service that provides information about IETF participation.
 
 ```
 ❯ python3 ietf-insights.py -H
