@@ -163,35 +163,35 @@ Most active participants (total WG session attendance):
 
 - `-m` or `--meeting`: Specifies the meeting to process. This argument is required when using `-s/--stats`, `-n/--name`, `-c/--company`, or `-g/--group`. 
 
-  Example: `python3 counter.py -m "ietf117"`
+  Example: `python3 ietf-insights.py -g "core" -m "ietf117"`
 
 - `-n` or `--name`: Filters the data based on a specific name. This argument requires `-m/--meeting`.
 
-  Example: `python3 counter.py -n "John Doe" -m "ietf117"`
+  Example: `python3 ietf-insights.py -n "John Doe" -m "ietf117"`
 
 - `-c` or `--company`: Filters the data based on a specific company. This argument requires `-m/--meeting`.
 
-  Example: `python3 counter.py -c "ericsson" -m "ietf117"`
+  Example: `python3 ietf-insights.py -c "ericsson" -m "ietf117"`
 
 - `-g` or `--group`: Filters the data based on a specific group. This argument requires `-m/--meeting`.
 
-  Example: `python3 counter.py -g "core" -m "ietf117"`
+  Example: `python3 ietf-insights.py -g "core" -m "ietf117"`
 
 - `-s` or `--stats`: Displays statistics. This argument requires `-m/--meeting`.
 
-  Example: `python3 counter.py -s -m "ietf117"`
+  Example: `python3 ietf-insights.py -s -m "ietf117"`
 
 - `-H` or `--historical-stats`: Displays historical statistics. Can be used alone or with `-n/--name` or `-g/--group`.
 
-  Example: `python3 counter.py -H`
+  Example: `python3 ietf-insights.py -H`
 
 - `--country`: Filters the data based on a specific country. This argument requires `-m/--meeting`.
 
-  Example: `python3 counter.py --country "ES" -m "ietf117"`
+  Example: `python3 ietf-insights.py --country "ES" -m "ietf117"`
 
 - `--not-attending`: Finds non-attending groups for a specific company. This argument requires `-m/--meeting`.
 
-  Example: `python3 counter.py --not-attending "ACME INC" -m "ietf117"`
+  Example: `python3 ietf-insights.py --not-attending "ACME INC" -m "ietf117"`
 
 Please note that the script will raise an error if required arguments are missing or if invalid commands are provided.
 
