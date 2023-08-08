@@ -132,7 +132,7 @@ Most active participants (total WG session attendance):
 +--------------------+-----------+------------+---------------+
 ```
 
-- Get insights about a participant: `python3 ietf-insights.py -n "Jaime Jimenez" -m "ietf117"`
+- Get insights about a participant on a specific meeting: `python3 ietf-insights.py -n "John Doe" -m "ietf117"` (Don't use John Doe but a real name)
 
 
 ```
@@ -157,7 +157,47 @@ Most active participants (total WG session attendance):
 
 ```
 
+- Get historical insights about a participant: `python3 ietf-insights.py -H -n "John Doe"` (Don't use John Doe but a real name)
 
+
+```
+Summary:
+John Doe has focused on core, cose, and lake working groups. Core focuses on core protocols, COSE focuses on cryptography, and Lake focuses on the development of network protocols.
+
+Historical attendance for John Doe:
+   16.00  ┤
+   14.73  ┼╮
+   13.45  ┤│
+   12.18  ┤│
+   10.91  ┤│╭╮
+    9.64  ┤│││
+    8.36  ┤│││
+    7.09  ┤╰╯│╭
+    5.82  ┤  ││
+    4.55  ┤  ││
+    3.27  ┤  ││
+    2.00  ┤  ╰╯
+
+Groups attended by John Doe:
+Meeting 108 109 113 114 115
+Group                      
+core      *   *   *   *   *
+cose      *   *   *       *
+lake          *   *       *
+suit      *   *   *        
+ace       *       *        
+asdf      *   *            
+cbor      *               *
+hotrfc                *   *
+iotops            *       *
+6lo               *        
+ohai              *        
+qirg      *                
+quic          *            
+rats              *        
+scitt                     *
+
+```
 
 ## Arguments
 
