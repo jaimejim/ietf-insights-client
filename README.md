@@ -161,41 +161,50 @@ Most active participants (total WG session attendance):
 
 
 ```
-Summary:
-John Doe has focused on core, cose, and lake working groups. Core focuses on core protocols, COSE focuses on cryptography, and Lake focuses on the development of network protocols.
+John Doe has focused on the Calendaring
+Extensions (calext) and JSON Mail Access Protocol
+(jmap) working groups. In the Calendaring
+Extensions group, he has attended meetings led by
+Francesca Palombini and chaired by Bron Gondwana
+and Daniel Migault. This group focuses on
+extending calendaring capabilities in various
+protocols and applications. In the JSON Mail
+Access Protocol group, he has attended meetings
+led by Murray Kucherawy and chaired by Jim Fenton
+and Bron Gondwana. This group is responsible for
+defining a protocol for accessing and manipulating
+email messages using JSON. John Doe has not
+held any specific roles in these groups.
 
 Historical attendance for John Doe:
-   16.00  ┤
-   14.73  ┼╮
-   13.45  ┤│
-   12.18  ┤│
-   10.91  ┤│╭╮
-    9.64  ┤│││
-    8.36  ┤│││
-    7.09  ┤╰╯│╭
-    5.82  ┤  ││
-    4.55  ┤  ││
-    3.27  ┤  ││
-    2.00  ┤  ╰╯
+    9.00  ┤        ╭
+    8.36  ┤        │
+    7.73  ┼╮       │
+    7.09  ┤│       │
+    6.45  ┤╰╮      │
+    5.82  ┤ │      │
+    5.18  ┤ │╭╮╭╮  │
+    4.55  ┤ ││╰╯│  │
+    3.91  ┤ ││  │  │
+    3.27  ┤ ╰╯  ╰╮╭╯
+    2.64  ┤      ╰╯
+    2.00  ┤
 
 Groups attended by John Doe:
-Meeting 108 109 113 114 115
-Group                      
-core      *   *   *   *   *
-cose      *   *   *       *
-lake          *   *       *
-suit      *   *   *        
-ace       *       *        
-asdf      *   *            
-cbor      *               *
-hotrfc                *   *
-iotops            *       *
-6lo               *        
-ohai              *        
-qirg      *                
-quic          *            
-rats              *        
-scitt                     *
+Meeting     108 109 110 111 112 113 114 115 116 117
+Group                                              
+jmap          *   *   *   *   *   *   *   *   *   *
+calext        *   *   *   *   *   *   *           *
+dispatch      *   *       *       *   *   *   *    
+emailcore         *   *   *   *                    
+extra         *   *                               *
+sedate                    *   *   *                
+dmarc             *                               *
+oauth                                         *   *
+gnap                                              *
+httpapi                                           *
+httpapi.txt                                       *
+httpbis                                           *
 
 ```
 
