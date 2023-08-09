@@ -134,12 +134,11 @@ Most active participants (total WG session attendance):
 
 - Get insights about a participant on a specific meeting: `python3 ietf-insights.py -n "John Doe" -m "ietf117"` (Don't use John Doe but a real name)
 
-
 ```
 +---------------+----------+-------------+-----------+---------------+------------+
 | Participant   | Group    | NumGroups   | Country   | Affiliation   | Reg Type   |
 |---------------+----------+-------------+-----------+---------------+------------|
-| Jaime Jimenez | dtn      | 14          | FI        | Ericsson      | Remote     |
+| John Doe      | dtn      | 14          | FI        | Ericsson      | Remote     |
 |               | anrw     |             |           |               |            |
 |               | rats     |             |           |               |            |
 |               | scitt    |             |           |               |            |
