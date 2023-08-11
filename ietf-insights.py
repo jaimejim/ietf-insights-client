@@ -54,7 +54,7 @@ class RequestThread(threading.Thread):
         try:
             self.response = requests.get(url, params=self.params, timeout=25)
         except requests.exceptions.Timeout:
-            print("\nThe request timed out")
+            print("\nThe request timed out. It is possible that render is currently deploying this app. Try again in a minute.")
         except requests.exceptions.RequestException as e:
             # handle other types of exceptions
             print(f"\nAn error occurred: {e}")
@@ -63,12 +63,12 @@ class RequestThread(threading.Thread):
 request_thread = RequestThread(params, args.debug)
 request_thread.start()
 
-spinner = itertools.cycle(['-', '/', '|', '\\'])
+spinner = itertools.cycle(['-', '\\', '|', '/', '+', 'x', '*', '.'])
 
 # Wait for the request to complete, and print a message if it takes too long
 start_time = time.time()
 while request_thread.is_alive():
-    if time.time() - start_time > 5:  # If more than 5 seconds have passed
+    if time.time() - start_time > 2:  # If more than 2 seconds have passed
         sys.stdout.write(next(spinner))  # write the next character
         sys.stdout.flush()  # flush stdout buffer (actual character display)
         time.sleep(0.1)
