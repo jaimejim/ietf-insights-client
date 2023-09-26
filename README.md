@@ -1,5 +1,7 @@
 # IETF Insights
 
+**NOTE: The server side is running on render and it takes a bit to load for the first request**
+
 This is a thin python client to an IETF service that provides information about IETF participation.
 
 ```
